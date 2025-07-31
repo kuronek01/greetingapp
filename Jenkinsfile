@@ -26,5 +26,16 @@ pipeline {
                 sh 'venv/bin/bandit -r app/'
             }
         }
+        stage('Code Analysis') {
+  steps {
+    withSonarQubeEnv('YourSonarServer') {
+      sh 'venv/bin/sonar-scanner \
+        -Dsonar.projectKey=greetingapp \
+        -Dsonar.sources=app \
+        -Dsonar.python.version=3.11'
+    }
+  }
+}
+
     }
 }
