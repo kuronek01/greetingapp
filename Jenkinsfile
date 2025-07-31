@@ -29,7 +29,7 @@ pipeline {
         stage('Code Analysis') {
   steps {
     withSonarQubeEnv('testsonar') {
-      sh 'venv/bin/sonar-scanner \
+      sh 'sonar-scanner \
         -Dsonar.projectKey=greetingapp \
         -Dsonar.sources=app \
         -Dsonar.python.version=3.11'
