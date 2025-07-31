@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Code Analysis') {
   steps {
-    withSonarQubeEnv('http://localhost:9000) {
+    withSonarQubeEnv('testsonar') {
       sh 'venv/bin/sonar-scanner \
         -Dsonar.projectKey=greetingapp \
         -Dsonar.sources=app \
