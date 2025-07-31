@@ -18,12 +18,12 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'pytest tests/'
+                sh 'venv/bin/python -m pytest tests/'
             }
         }
         stage('Security Scan') {
             steps {
-                sh 'bandit -r app/'
+                sh 'venv/bin/bandit -r app/'
             }
         }
     }
