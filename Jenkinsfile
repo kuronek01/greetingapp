@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: '10', url: 'https://github.com/kuronek01/greetingapp.git'
+                git branch: 'main', credentialsId: '10', url: 'https://github.com/kuronek01/greetingapp.git'
             }
         }
         stage('Install Dependencies') {
